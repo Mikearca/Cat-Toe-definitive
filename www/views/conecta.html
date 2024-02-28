@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Conecta 4</title>
+        <style>
+            td {
+                background-color: #638CFF;
+                border: 0px !important;
+                padding: 5px !important;
+            }
+            .img-player{
+                max-width: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th v-for="i in COLUMNS">
+                        <button :disabled="!canPlay" @click="makeMove(i)" class="btn btn-warning">Make move
+                            here&nbsp;<i class="fa fa-arrow-down"></i></button>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="row in board">
+                    <td v-for="cell in row">
+                        <img class="img-fluid img-player" :src="cellImage(cell)" alt="">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </body>
+</html>
